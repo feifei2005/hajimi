@@ -1,0 +1,14 @@
+name = "your-hajimi-proxy-worker" # 给你的 Worker 起一个独一无二的名字，比如你的GitHub用户名-hajimi-proxy
+main = "src/index.py"             # Python Worker 的入口文件
+compatibility_date = "2025-06-12" # 填写今天的日期或者未来日期，例如 "2025-06-12"
+workers_dev = true                # 是否在 workers.dev 域名下启用
+
+# 指定这是一个 Python Worker，wrangler 会自动处理打包
+# [build] # 通常不需要在这里手动添加 build 命令，wrangler 会自动处理
+
+# 以下是可选配置，如果你的 Worker 需要使用环境变量或者 Cloudflare AI 绑定
+# [vars]
+# GEMINI_API_KEY = "your_gemini_api_key_from_secrets" # 你可以通过环境变量注入你的 Gemini API Key
+
+# [ai] # 如果需要使用 Cloudflare AI 绑定
+# bindings = { text_embeddings = "@cf/baai/bge-small-en-v1.5" }
